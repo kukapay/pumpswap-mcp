@@ -13,8 +13,6 @@ An MCP server that enables AI agents to interact with [PumpSwap](https://swap.pu
 - **Sell Tokens**: Sell tokens for SOL with configurable parameters.
 - **Token Price Query**: Retrieve current token prices in SOL.
 - **Pool Data Retrieval**: Fetch and display detailed pool information for a given token mint.
-- **Environment Configuration**: Securely load sensitive data (e.g., private keys) via `.env` files.
-- **Error Handling**: Robust error reporting for failed transactions and queries.
 
 ## Prerequisites
 
