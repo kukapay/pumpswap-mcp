@@ -1,0 +1,10 @@
+[project]
+name = "pumpswap-mcp"
+version = "0.1.0"
+description = "An MCP server that enables AI agents to interact with PumpSwap for real-time token swaps and automated on-chain trading."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mcp[cli]>=1.7.1",
+    "pumpswap-sdk>=0.1.3",
+]
