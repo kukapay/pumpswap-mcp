@@ -23,6 +23,15 @@ An MCP server that enables AI agents to interact with [PumpSwap](https://swap.pu
 
 ## Installation
 
+### Installing via Smithery
+
+To install PumpSwap Token Trading Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@kukapay/pumpswap-mcp):
+
+```bash
+npx -y @smithery/cli install @kukapay/pumpswap-mcp --client claude
+```
+
+### Manual Installation
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/kukapay/pumpswap-mcp.git
