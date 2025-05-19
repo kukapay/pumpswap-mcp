@@ -1,0 +1,39 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'uv', args: ['run', 'main.py'], env: { HTTPS_RPC_ENDPOINT: config.httpsRpcEndpoint, BUY_SLIPPAGE: config.buySlippage.toString(), SELL_SLIPPAGE: config.sellSlippage.toString(), SWAP_PRIORITY_FEE: config.swapPriorityFee.toString(), PRIVATE_KEY: config.privateKey } })
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - privateKey
+    properties:
+      httpsRpcEndpoint:
+        type: string
+        default: https://api.mainnet-beta.solana.com
+        description: Solana RPC endpoint URL
+      buySlippage:
+        type: number
+        default: 0.3
+        description: Slippage tolerance for buy transactions
+      sellSlippage:
+        type: number
+        default: 0.1
+        description: Slippage tolerance for sell transactions
+      swapPriorityFee:
+        type: number
+        default: 1500000
+        description: Priority fee for transactions in lamports
+      privateKey:
+        type: string
+        description: Solana private key for signing transactions
+  exampleConfig:
+    httpsRpcEndpoint: https://api.mainnet-beta.solana.com
+    buySlippage: 0.3
+    sellSlippage: 0.1
+    swapPriorityFee: 1500000
+    privateKey: your-solana-private-key-here
